@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * menu
+ *
+ * @copyright
+ * @author    sushynskyiar@gmail.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Blog_News::configtab" title="Blog News" module="Blog_News" sortOrder="300" resource="Blog_News::configtab"/>
+        <add id="Blog_News::post" title="Manage Posts" module="Blog_News" sortOrder="10" action="blognews/post" resource="Blog_News::post" parent="Blog_News::configtab"/>
+    </menu>
+</config>

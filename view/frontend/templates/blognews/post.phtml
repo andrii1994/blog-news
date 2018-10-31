@@ -1,0 +1,20 @@
+<?php
+/**
+ * post
+ *
+ * @copyright
+ * @author    sushynskyiar@gmail.com
+ */
+
+/**
+ * @var $this Blog\News\Block\Post
+ */
+?>
+<h1 class="main-title">Post page</h1>
+<br>
+<?php foreach ($this->getCollection() as $post): ?>
+    <pre>
+    <?php print_r($post->getData()) ?>
+</pre>
+    <br>
+<?php endforeach; ?>

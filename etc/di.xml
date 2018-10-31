@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * di
+ *
+ * @copyright
+ * @author    sushynskyiar@gmail.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="blog_news_listing_data_source"
+                      xsi:type="string">Blog\News\Model\ResourceModel\Post\Grid\Collection
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Blog\News\Model\ResourceModel\Post\Grid\Collection">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">blog_news_post</argument>
+            <argument name="eventPrefix" xsi:type="string">blog_news_post_collection</argument>
+            <argument name="eventObject" xsi:type="string">post_collection</argument>
+            <argument name="resourceModel" xsi:type="string">Blog\News\Model\ResourceModel\Post</argument>
+        </arguments>
+    </type>
+    <virtualType name="Blog\News\ImageUploader"
+                 type="Magento\Catalog\Model\ImageUploader"><!-- replace [entity] with your entity name -->
+        <arguments>
+            <argument name="baseTmpPath" xsi:type="string">blog_news/image/tmp</argument>
+            <argument name="basePath" xsi:type="string">blog_news/image</argument>
+            <argument name="allowedExtensions" xsi:type="array"><!-- you can add here file extension restrictions -->
+                <item name="jpg" xsi:type="string">jpg</item>
+                <item name="jpeg" xsi:type="string">jpeg</item>
+                <item name="gif" xsi:type="string">gif</item>
+                <item name="png" xsi:type="string">png</item>
+            </argument>
+        </arguments>
+    </virtualType>
+    <type name="Blog\News\Controller\Adminhtml\Post\ImageUploader">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">Blog\News\ImageUploader
+            </argument><!-- again, replace [entity] with the name of your entity. Make sure it matches the name of the virtual type above. -->
+        </arguments>
+    </type>
+</config>

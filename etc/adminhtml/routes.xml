@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * routes
+ *
+ * @copyright
+ * @author    sushynskyiar@gmail.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin"> <!-- standard or admin -->
+        <route id="blognews" frontName="blognews">
+            <module name="Blog_News" />
+        </route>
+    </router>
+</config>
