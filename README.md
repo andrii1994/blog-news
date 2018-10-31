@@ -1,3 +1,1 @@
-# blog-news
-
-Magento 2 Blog module 
+# Magento 2 Blog module
